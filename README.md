@@ -59,11 +59,15 @@ Please find the proposed agenda below - what we will build step by step.
 - [ ] displaying the Flight Model
 - [ ] (l)oops!
 
-### Basic filtering on client side
-- [ ] 
+### Basic filtering - client side
+
+- [ ] adding min/max (price) inputs+checkboxes & listeners
+- [ ] filtering the results
 
 ### Simple Animations :fireworks:
-- [ ]
+
+- [ ] Adding "expand mode" with details of given flight
 
 ### [optional] 
- - [ ] \(optional) Adding "expand mode" with map
+ - [ ] \(optional) Adding map to "expand mode"
+ 
