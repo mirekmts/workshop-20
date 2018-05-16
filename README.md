@@ -16,3 +16,9 @@ Repository for React Basics Workshop
 # Spinner/Loader state - a few words about UX/UI
 
 # Results Model & Presentation
+
+# Basic filtering on client side
+
+# Simple Animations :fireworks:
+
+# [optional] Adding "expand mode" with map
