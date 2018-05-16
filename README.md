@@ -42,17 +42,28 @@ Please find the proposed agenda below - what we will build step by step.
 
 ### Basic inputs for searcher
 
+- [ ] keeping values in "state" - what it is and how it differs from props? (change over time vs. const)
 - [ ] make the inputs "aware" of pending/loading state (locations)
 - [ ] provide data to inputs
-- [ ] keeping values in "state" - what it is and how it differs from props?
-- [ ] 
+- [ ] keeping input current value in state
 
 ### Spinner/Loader state - a few words about UX/UI
 
+- [ ] basic "validation" and button look
+- [ ] pending state & ActivityIndicator
+- [ ] calling the hero API - FlightService & FlightModel 
+- [ ] transition
+
 ### Results Model & Presentation
 
+- [ ] displaying the Flight Model
+- [ ] (l)oops!
+
 ### Basic filtering on client side
+- [ ] 
 
 ### Simple Animations :fireworks:
+- [ ]
 
-### [optional] Adding "expand mode" with map
+### [optional] 
+ - [ ] \(optional) Adding "expand mode" with map
