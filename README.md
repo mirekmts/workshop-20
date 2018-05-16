@@ -6,22 +6,31 @@ Repository for React Basics Workshop which will take (took) place on 19.05.2018 
 
 A simple app like LOT/Wizzair search for multiple airlines. App involves simple search criteria, loading results from online API, presenting the results and more.
 
-## App Core
+## Main steps
 
-## Pseudo-scenes / main states / navigation
+Please find the proposed agenda below - what we will build step by step.
 
-## Basic inputs for searcher
+### App Core
 
-## Adding dependencies - material-ui / styling
+- [ ] initialize the app core/main screen
+- [ ] run the project
+- [ ] make a simple change and observe how the results change
+- [ ] a few words about development/production "builds"
 
-## Adding dependencies - axios / API Service
+### Pseudo-scenes / main states / navigation
 
-## Spinner/Loader state - a few words about UX/UI
+### Basic inputs for searcher
 
-## Results Model & Presentation
+### Adding dependencies - material-ui / styling
 
-## Basic filtering on client side
+### Adding dependencies - axios / API Service
 
-## Simple Animations :fireworks:
+### Spinner/Loader state - a few words about UX/UI
 
-## [optional] Adding "expand mode" with map
+### Results Model & Presentation
+
+### Basic filtering on client side
+
+### Simple Animations :fireworks:
+
+### [optional] Adding "expand mode" with map
