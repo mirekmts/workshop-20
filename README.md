@@ -1,24 +1,27 @@
 # warsawjs-workshop-20-flight-scanner
-Repository for React Basics Workshop
 
-# What we will build?
+Repository for React Basics Workshop which will take (took) place on 19.05.2018 in Warsaw.
 
-# App Core
+## What we will build?
 
-# Pseudo-scenes / main states / navigation
+A simple app like LOT/Wizzair search for multiple airlines. App involves simple search criteria, loading results from online API, presenting the results and more.
 
-# Basic inputs for searcher
+## App Core
 
-# Adding dependencies - material-ui / styling
+## Pseudo-scenes / main states / navigation
 
-# Adding dependencies - axios / API Service
+## Basic inputs for searcher
 
-# Spinner/Loader state - a few words about UX/UI
+## Adding dependencies - material-ui / styling
 
-# Results Model & Presentation
+## Adding dependencies - axios / API Service
 
-# Basic filtering on client side
+## Spinner/Loader state - a few words about UX/UI
 
-# Simple Animations :fireworks:
+## Results Model & Presentation
 
-# [optional] Adding "expand mode" with map
+## Basic filtering on client side
+
+## Simple Animations :fireworks:
+
+## [optional] Adding "expand mode" with map
