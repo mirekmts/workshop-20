@@ -1,6 +1,6 @@
 # warsawjs-workshop-20-flight-scanner
 
-Repository for React Basics Workshop which will take (took) place on 19.05.2018 in Warsaw.
+Repository for React Basics Workshop which will take (took) place on 20.05.2018 in Warsaw.
 
 ## What we will build?
 
