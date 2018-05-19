@@ -122,32 +122,6 @@ Please find the proposed agenda below - what we will build step by step.
 
     * a few words about component architecture and responsibilities
     * influence on Unit Tests
-
-    * Create FlightsView
-    ```
-    import React, {Component} from 'react';
-    import PropTypes from 'prop-types';
-
-    export class FlightsView extends Component {
-        render() {
-            return (
-                <div>
-                    <ol>
-                        <li>Flight #1</li>
-                        <li>Flight #2</li>
-                        <li>Flight #3</li>
-                    </ol>
-                    <button>Go back</button>
-                </div>
-            )
-        }
-    }
-
-    FlightsView.propTypes = {
-
-    };
-    ```
-
     * Create SearchView:
 
     ```
@@ -269,7 +243,7 @@ Please find the proposed agenda below - what we will build step by step.
     registerServiceWorker();
 
     ```
-- [ ] changing "Next Button" to use materia-ui
+- [ ] changing "Next Button" to use material-ui
     * code
         ```
         import React, {Component} from 'react';
@@ -299,7 +273,7 @@ Please find the proposed agenda below - what we will build step by step.
     * code
     ```
     //FlightView > render() method
-    <PrimaryButton text={`Go back`} onClick={onBackClick}/>
+    <SearchButton text={`Go back`} onClick={onBackClick}/>
     ```
 
 - [ ] other components which we will need (Datepicker, ActivityIndicator/Spinner) - check out the documentation!
@@ -327,7 +301,7 @@ Please find the proposed agenda below - what we will build step by step.
     }
     ```
 
-    * AirPortService:
+    * AirportService.js:
     ```
     import axios from 'axios';
     import {AirportModel} from "../models/AirportModel";
@@ -347,7 +321,7 @@ Please find the proposed agenda below - what we will build step by step.
     ```
 
 - [ ] component lifecycle https://reactjs.org/docs/react-component.html
-    * make a sample use of our Service and assign results to state
+    * make a sample use of our Service and assign results to state - App.js
     ```
     state = {
             searchVisible: true,
@@ -367,7 +341,7 @@ Please find the proposed agenda below - what we will build step by step.
 ### Basic inputs for searcher
 - [ ] add inputs to select FROM and TO flight
     * https://material-ui.com/demos/selects/
-    * code
+    * code - SearchView.js
     ```
 
     import InputLabel from '@material-ui/core/InputLabel';
@@ -493,10 +467,11 @@ Please find the proposed agenda below - what we will build step by step.
     };
 
     ```
-    * extra task - something more was added to properly display everything - notice and add your own :)
+    * extra task - something more was added to properly display everything - notice and add your own (hint: "string")
     * (optional) make it look even better! (exercise)
     * Follow `https://material-ui.com/demos/selects/` to add theme styles from material-ui
     ```
+    //SelectAirport.js
     const styles = theme => ({
       formControl: {
         margin: theme.spacing.unit,
@@ -504,12 +479,12 @@ Please find the proposed agenda below - what we will build step by step.
       },
     });
     ```
-    Wrap our component into:
+    Wrap our current rendered elements into:
     ```
     <FormControl className={classes.formControl}>
     ```
 
-    Change the way we export our component:
+    Change the way we export our component: (default export vs export example)
     ```
     ControlledOpenSelect.propTypes = {
       classes: PropTypes.object.isRequired,
@@ -521,6 +496,7 @@ Please find the proposed agenda below - what we will build step by step.
 
 - [ ] passing over the selected value to container - store in the state!
     ```
+    //SearchView.js
     state = {
         fromAirport: null,
         toAirport: null
@@ -528,7 +504,7 @@ Please find the proposed agenda below - what we will build step by step.
 
     _updateAirport = (key, airport) => {
         this.setState({
-            [key]: airport
+            [key]: airport  //[key] is a dynamic property name based on value of 'key'
         }, () => {console.log(this.state)});
     };//no need to .bind to be aware of THIS
     ```
@@ -537,6 +513,7 @@ Please find the proposed agenda below - what we will build step by step.
 
 - [ ] make the inputs "aware" of pending/loading state (airports) (exercise)
     ```
+    //SearchView.js
     {!pending &&
                     (<div>
                         <SelectAirport onChange={(airport) => this._updateAirport(`fromAirport`, airport)}
@@ -562,22 +539,21 @@ Please find the proposed agenda below - what we will build step by step.
     * task - add progress indicator and finish/start actually take place
 
 - [ ] basic "validation" and button look (exercise)
-    Helper:
     ```
+    //code that may help you
     <PrimaryButton text={`Search for the flights`}
         onClick={onSearchClick}
         disabled={fieldsSelected}
     ```
 - [ ] calling the hero API - FlightService & FlightModel
     * warning - as probably we are getting out of time, we cannot keep our code super clean!
-    * (optional todo if we have enough time - in/outPath models
+    * (optional todo if we have enough time - in/outPath models)
     * another (better) way to handle DTO objects
     ```
     //FlightModel
     export class FlightModel {
         id;
         price;
-        startHour;
         inboundPath;
         outboundPath;
 
@@ -618,13 +594,13 @@ Please find the proposed agenda below - what we will build step by step.
     ```
 
     ```
-
-                {(pending || flightsPending) && <CircularProgress />}
-                <br />
-                {!flightsPending && <PrimaryButton text={`Search for the flights`}
-                               onClick={this.onSearchPress}
-                               disabled={fieldsSelected}
-                />}
+    //inside render, change the following:
+    {(pending || flightsPending) && <CircularProgress />}
+    <br />
+    {!flightsPending && <PrimaryButton text={`Search for the flights`}
+        onClick={this.onSearchPress}
+        disabled={fieldsSelected}
+    />}
     ```
 - [ ] pending state & ActivityIndicator (exercise)
 
@@ -635,7 +611,7 @@ Please find the proposed agenda below - what we will build step by step.
 - [ ] talk about how messy (really?) we are starting to be (two containers, passing data over)
 - [ ] better solution? redux & state managment
 - [ ] without redux? SearchContainer > SearchView & FlightContainer > FlightView
-- [ ] pass the data to FlightsView
+- [ ] now, lets pass the data to FlightsView
     * add propTypes
     ```
     FlightsView.propTypes = {
@@ -647,13 +623,14 @@ Please find the proposed agenda below - what we will build step by step.
         flights: []
     };
     ```
-    * add passing the data to flightv view
+    * add passing the data to FlightsView.js
     ```
     {!searchVisible && <FlightsView onBackClick={this.onBackClick} flights={flights} />}
     ```
 - [ ] displaying the Flight Model
     * quick way to see our hard work!
     ```
+    //FlightsView.js
     <ol>
         {flights.map(flight => <div>{flight.toString()}</div>)}
     </ol>
@@ -797,7 +774,32 @@ Please find the proposed agenda below - what we will build step by step.
 
 * end of branch `step_8`
 
-### Whats next?
+### Whats next (in this project) ?
+- [ ] change main view to be more 'wow' before presentation (if you would like to)
 - [ ] make date not being dummy again! (add Date Inputs)
 - [ ] add icons to buttons
-- [ ] add animation & expandable Flight Details
+- [ ] add animation & expandable Flight Details (instead of being visible already)
+- [ ] add service to fetch airlines data and show logo&name in Flight Results
+- [ ] read more about making your own styles
+
+### Next Steps - how to get better?
+- [ ] make your own app from scratch - it always helps!
+- [ ] use Router
+- [ ] make a simple app with login/logout and storing session
+- [ ] learn flow or Typescript for types support - it is a must!
+- [ ] learn writing Test (jest, enzyme)
+- [ ] when you are familiar with the above, write the same app with TDD - you will learn very quick why it is important to keep Components as small as possible and put certain logic in Containers and places where they should be
+
+### Key Notes
+* setState is asynchronous
+* keep the Components logic & responsibility in one place (Containers > API; View > Screen as a whole; subcomponents to handle internal logic (like Forms); small components to serve just as 'display'
+* state vs. props - stateful components vs static display (but both can be 'dynamic')
+* Component Lifecycle - ...didMount and similar
+* always create models & services
+* use PropTypes!
+* keep DRY & Constant Refactor
+* and be SOLID :) https://en.wikipedia.org/wiki/SOLID
+* learn TS/@flow - a must!
+* learn Testing - a must!
+* learn ES6...100 - plain JS stays, frameworks change
+* proper GitFlow is hard to understand.. but fully worth it (you will understand when you go live with product)
