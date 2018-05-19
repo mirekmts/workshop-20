@@ -12,8 +12,14 @@ Please find the proposed agenda below - what we will build step by step.
 
 ### App Core
 
-- [ ] initialize the app core/main screen
-- [ ] run the project
+- [ ] prepare the environment & create app
+    * create repository on git and clone it
+    * `npm i create-react-app -g` (sudo/admin)
+    * `create-react-app .` (`.` == cwd dir)
+    * `npm start`
+    * open `http://localhost:3000`
+    * `https://atom.io/packages/react` - IDE & support for JFX
+
 - [ ] make a simple change and observe how the results change
 - [ ] a few words about development/production "builds"
 
