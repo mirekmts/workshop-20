@@ -21,7 +21,11 @@ Please find the proposed agenda below - what we will build step by step.
     * `https://atom.io/packages/react` - IDE & support for JFX
 
 - [ ] make a simple change and observe how the results change
+    * after running the application, change some text or add additional tags and observe live reload
+
 - [ ] a few words about development/production "builds"
+    * `npm start`
+    * `npm run build` & dist
 
 ### Pseudo-scenes / main states / navigation
 
