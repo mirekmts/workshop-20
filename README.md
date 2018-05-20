@@ -77,7 +77,7 @@ Please find the proposed agenda below - what we will build step by step.
     };
     ```
 
-    Try writing `<PrimaryButton` and press space (or any other way to see hints!)
+    Try writing `<SearchButton` and press space (or any other way to see hints!)
 
     * ... but I want to mark it as mandatory!
 
